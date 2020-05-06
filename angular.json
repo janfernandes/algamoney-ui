@@ -24,7 +24,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "algamoney-ui"
+    }
+  },
+  "defaultProject": "algamoney-ui",
+  "cli": {
+    "analytics": "e850605f-ecd9-4b7a-b9dc-d6f937709ba8"
+  }
 }
