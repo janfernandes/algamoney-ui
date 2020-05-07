@@ -5,6 +5,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import {PaginatorModule} from 'primeng/paginator';
+import {TooltipModule} from 'primeng/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,8 @@ import { AppComponent } from './app.component';
     InputTextModule,
     ButtonModule,
     TableModule,
-    PaginatorModule
+    PaginatorModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
