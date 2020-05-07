@@ -28,10 +28,18 @@
 
   text-transform: uppercase;
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
 .navbar-menuitem {
   padding: 15px;
 }
 
+.navbar-menuitem a{
+  color: #c0bbb7;
+  text-decoration: none;
+}
+
+.navbar-menuitem a:hover {
+  color: white;
+}
