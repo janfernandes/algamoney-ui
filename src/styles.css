@@ -40,3 +40,8 @@ label {
   width: 100px;
   text-align: center;
 }
+
+.ui-message.ui-message-error{
+  margin: 0;
+  margin-top: 4px;
+}
