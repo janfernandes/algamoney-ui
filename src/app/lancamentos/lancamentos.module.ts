@@ -13,6 +13,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {DropdownModule} from 'primeng/dropdown';
 import {CurrencyMaskModule} from 'ng2-currency-mask';
+import {SharedModule} from '../shared/shared.module';
 
 
 
@@ -29,7 +30,8 @@ import {CurrencyMaskModule} from 'ng2-currency-mask';
     CalendarModule,
     SelectButtonModule,
     DropdownModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    SharedModule
   ],
   declarations: [
     LancamentoCadastroComponent,

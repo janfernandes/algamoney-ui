@@ -9,6 +9,7 @@ import {TooltipModule} from 'primeng/tooltip';
 import {FormsModule} from '@angular/forms';
 import {InputMaskModule} from 'primeng/inputmask';
 import { PessoaGridComponent } from './pessoa-grid/pessoa-grid.component';
+import {SharedModule} from '../shared/shared.module';
 
 
 
@@ -17,12 +18,12 @@ import { PessoaGridComponent } from './pessoa-grid/pessoa-grid.component';
   imports: [
     CommonModule,
     FormsModule,
-
     InputTextModule,
     ButtonModule,
     TableModule,
     TooltipModule,
-    InputMaskModule
+    InputMaskModule,
+    SharedModule
   ],
   declarations: [
     PessoaCadastroComponent,
