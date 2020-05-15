@@ -25,6 +25,7 @@ import {LancamentoCadastroComponent} from './lancamento-cadastro/lancamento-cada
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 import { MessageComponent } from './message/message.component';
+import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MessageComponent } from './message/message.component';
     PessoasPesquisaComponent,
     LancamentoCadastroComponent,
     PessoaCadastroComponent,
-    MessageComponent
+    MessageComponent,
+    LancamentosGridComponent
   ],
   imports: [
     BrowserModule,
