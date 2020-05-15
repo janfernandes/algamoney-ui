@@ -15,8 +15,8 @@
                     [inline]="false" [readonlyInput]="false" [showIcon]="true"
                     ngModel #vencimento="ngModel" required></p-calendar>
 
-        <app-message [control]="vencimento" error="required"
-                     text="Informe uma data de vencimento"></app-message>
+<!--        <app-message [control]="vencimento" error="required"-->
+<!--                     text="Informe uma data de vencimento"></app-message>-->
       </div>
 
 
@@ -30,8 +30,8 @@
         <label>Descrição</label>
 <!--        {{descricao.errors |json}}-->
         <input pInputText type="text" name="descricao" ngModel #descricao="ngModel" valid required="true" minlength="5">
-        <app-message [control]="descricao" error="required" text="Informe uma descrição"></app-message>
-        <app-message [control]="descricao" error="minlength" text="Mínimo de 5 caracteres"></app-message>
+<!--        <app-message [control]="descricao" error="required" text="Informe uma descrição"></app-message>-->
+<!--        <app-message [control]="descricao" error="minlength" text="Mínimo de 5 caracteres"></app-message>-->
 
         <!--        <div>-->
 <!--&lt;!&ndash;          descricao.errors.minlength.requiredLength&ndash;&gt;-->
