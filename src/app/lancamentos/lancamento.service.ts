@@ -1,8 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import * as moment from 'moment';
 
-export interface LancamentoFiltro {
+export class LancamentoFiltro {
   descricao: string;
+  dataVencimentoInicio: Date;
+  dataVencimentoFim: Date;
+  pagina = 0;
+  itensPorPagina = 5;
 }
 
 @Injectable({
@@ -19,15 +24,33 @@ export class LancamentoService {
     // const headers = new Headers();
     // headers.append('Authorization', 'Basic ...');
 
+    params = params.set('page', filtro.pagina.toString());
+    params = params.set('size', filtro.itensPorPagina.toString());
+
     if (filtro.descricao) {
       params = params.set('descricao', filtro.descricao);
+    }
+
+    if (filtro.dataVencimentoInicio) {
+      params = params.set('dataVencimentoDe', moment(filtro.dataVencimentoInicio).format('YYYY-MM-DD'));
+    }
+
+    if (filtro.dataVencimentoFim) {
+      params = params.set('dataVencimentoAte', moment(filtro.dataVencimentoFim).format('YYYY-MM-DD'));
     }
 
     // se tivesse o auth
     // return this.http.get(`${this.lancamentosUrl}?resumo`, { headers, params })
     return this.http.get(`${this.lancamentosUrl}?resumo`, {params})
       .toPromise()
-      .then(response => response['content']);
+      .then(response => {
+        const lancamentos = response['content'];
+        const resultado = {
+          lancamentos,
+          total: response['totalElements']
+        };
+        return resultado;
+      });
   }
 
 }
