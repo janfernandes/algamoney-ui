@@ -8,7 +8,6 @@ import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
 import {FormsModule} from '@angular/forms';
 import {InputMaskModule} from 'primeng/inputmask';
-import { PessoaGridComponent } from './pessoa-grid/pessoa-grid.component';
 import {SharedModule} from '../shared/shared.module';
 
 
@@ -27,8 +26,7 @@ import {SharedModule} from '../shared/shared.module';
   ],
   declarations: [
     PessoaCadastroComponent,
-    PessoasPesquisaComponent,
-    PessoaGridComponent,
+    PessoasPesquisaComponent
   ],
   exports: [
     PessoaCadastroComponent,

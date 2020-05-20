@@ -13,8 +13,7 @@ export class LancamentosPesquisaComponent implements OnInit{
   lancamentos = [];
 
 
-  constructor(private lancamentoService: LancamentoService) {
-  }
+  constructor(private lancamentoService: LancamentoService) {}
 
 
   ngOnInit(): void {
