@@ -23,9 +23,10 @@ export class PessoasPesquisaComponent  implements OnInit{
   }
 
   pesquisar(pagina = 0){
+    this.filtro.pagina = pagina;
+
     this.pessoaService.pesquisar(this.filtro)
       .then(result => {
-        console.log(result);
         this.totalRegistros = result.total;
         this.pessoas = result.pessoas;
       });
