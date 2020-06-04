@@ -1,19 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {LancamentoFiltro, LancamentoService} from '../lancamento.service';
-import {LazyLoadEvent} from 'primeng/api';
+import {LazyLoadEvent, MessageService} from 'primeng/api';
+
 
 @Component({
   selector: 'app-lancamentos-pesquisa',
   templateUrl: './lancamentos-pesquisa.component.html',
-  styleUrls: ['./lancamentos-pesquisa.component.css']
+  styleUrls: ['./lancamentos-pesquisa.component.css'],
+  providers: [MessageService]
 })
 export class LancamentosPesquisaComponent implements OnInit{
   totalRegistros = 0;
   filtro = new LancamentoFiltro();
   lancamentos = [];
+  @ViewChild('tabela') grid;
 
 
-  constructor(private lancamentoService: LancamentoService) {}
+  constructor(private lancamentoService: LancamentoService,
+              private messageService: MessageService) {}
 
 
   ngOnInit(): void {
@@ -31,6 +35,15 @@ export class LancamentosPesquisaComponent implements OnInit{
       .then(result => {
         this.totalRegistros = result.total;
         this.lancamentos = result.lancamentos;
+      });
+  }
+
+  excluir(lancamento: any) {
+    this.lancamentoService.excluir(lancamento.codigo)
+      .then(() => {
+        this.grid.reset();
+        this.messageService.add({severity: 'success', summary: 'Success Message', detail: 'Order submitted'});
+        this.messageService.add({key: 'myKey1', severity: 'success', summary: 'Summary Text', detail: 'Detail Text'});
       });
   }
 }

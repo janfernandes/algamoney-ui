@@ -30,7 +30,7 @@
     <div class="ui-g-12">
       <p-table [value]="lancamentos" [paginator]="true"
                [responsive]="true" [lazy]="true" [totalRecords]="totalRegistros" [rows]="filtro.itensPorPagina"
-               (onLazyLoad)="aoMudarPagina($event)">
+               (onLazyLoad)="aoMudarPagina($event)" #tabela>
         <ng-template pTemplate="header">
           <tr>
             <th pSortableColumn="pessoa">Pessoa
@@ -63,10 +63,16 @@
                 [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{lancamento.valor | number:'1.2-2'}}</span>
             </td>
             <!--            <button pButton label="Teste"></button>-->
-            <td class="col-acoes">
-              <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"></a>&nbsp;
-              <button icon="fa fa-trash" pButton pTooltip="Excluir" tooltipPosition="top"></button>
-            </td>
+
+              <td class="col-acoes">
+                <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"></a>&nbsp;
+                <button icon="fa fa-trash" pButton pTooltip="Excluir" tooltipPosition="top"
+                        (click)="excluir(lancamento)"></button>
+                <p-toast position="top-left"></p-toast>
+                <p-toast key="myKey1"></p-toast>
+              </td>
+
+
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
