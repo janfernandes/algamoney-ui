@@ -8,6 +8,9 @@ import {CoreModule} from './core/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import {LancamentoService} from './lancamentos/lancamento.service';
 import {ToastModule} from 'primeng/toast';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {PessoaService} from './pessoas/pessoa.service';
+import {ConfirmationService} from 'primeng/api';
 
 
 @NgModule({
@@ -20,9 +23,10 @@ import {ToastModule} from 'primeng/toast';
     PessoasModule,
     CoreModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    ConfirmDialogModule
   ],
-  providers: [LancamentoService],
+  providers: [LancamentoService, PessoaService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

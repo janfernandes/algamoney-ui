@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {LancamentoFiltro, LancamentoService} from '../lancamento.service';
-import {LazyLoadEvent, MessageService} from 'primeng/api';
+import {ConfirmationService, LazyLoadEvent, MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-lancamentos-pesquisa',
@@ -8,7 +8,7 @@ import {LazyLoadEvent, MessageService} from 'primeng/api';
   styleUrls: ['./lancamentos-pesquisa.component.css'],
   providers: [MessageService]
 })
-export class LancamentosPesquisaComponent implements OnInit{
+export class LancamentosPesquisaComponent implements OnInit {
   totalRegistros = 0;
   filtro = new LancamentoFiltro();
   lancamentos = [];
@@ -16,8 +16,10 @@ export class LancamentosPesquisaComponent implements OnInit{
 
   constructor(
     private lancamentoService: LancamentoService,
-    private messageService: MessageService
-  ) {}
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
+  ) {
+  }
 
   ngOnInit(): void {
   }
@@ -27,7 +29,7 @@ export class LancamentosPesquisaComponent implements OnInit{
     this.pesquisar(pagina);
   }
 
-  pesquisar(pagina = 0){
+  pesquisar(pagina = 0) {
     this.filtro.pagina = pagina;
 
     this.lancamentoService.pesquisar(this.filtro)
@@ -37,11 +39,24 @@ export class LancamentosPesquisaComponent implements OnInit{
       });
   }
 
+  verificarExclusao(lancamento: any) {
+    this.confirmationService.confirm({
+      message: 'Tem certeza que deseja excluir?',
+      accept: () => {
+        this.excluir(lancamento);
+      }
+    });
+  }
+
   excluir(lancamento: any) {
     this.lancamentoService.excluir(lancamento.codigo)
       .then(() => {
         this.grid.reset();
-        this.messageService.add({severity:'success', summary: 'Success Message', detail:'Lançamento excluído com sucesso.'});
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success Message',
+          detail: 'Lançamento excluído com sucesso.'
+        });
       });
   }
 }
