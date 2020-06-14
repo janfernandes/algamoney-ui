@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {LancamentosModule} from './lancamentos/lancamentos.module';
@@ -11,7 +11,10 @@ import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {PessoaService} from './pessoas/pessoa.service';
 import {ConfirmationService} from 'primeng/api';
+import {registerLocaleData} from "@angular/common";
+import localePt from '@angular/common/locales/pt';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -26,7 +29,12 @@ import {ConfirmationService} from 'primeng/api';
     ToastModule,
     ConfirmDialogModule
   ],
-  providers: [LancamentoService, PessoaService, ConfirmationService],
+  providers: [
+    LancamentoService,
+    PessoaService,
+    ConfirmationService,
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
