@@ -8,7 +8,6 @@ import {CoreModule} from './core/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import {LancamentoService} from './lancamentos/lancamento.service';
 import {ToastModule} from 'primeng/toast';
-import {MessageService} from 'primeng/message';
 
 
 @NgModule({
@@ -23,7 +22,7 @@ import {MessageService} from 'primeng/message';
     HttpClientModule,
     ToastModule
   ],
-  providers: [LancamentoService, MessageService],
+  providers: [LancamentoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

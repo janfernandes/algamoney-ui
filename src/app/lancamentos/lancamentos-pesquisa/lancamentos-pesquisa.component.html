@@ -63,16 +63,11 @@
                 [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{lancamento.valor | number:'1.2-2'}}</span>
             </td>
             <!--            <button pButton label="Teste"></button>-->
-
-              <td class="col-acoes">
-                <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"></a>&nbsp;
-                <button icon="fa fa-trash" pButton pTooltip="Excluir" tooltipPosition="top"
-                        (click)="excluir(lancamento)"></button>
-                <p-toast position="top-left"></p-toast>
-                <p-toast key="myKey1"></p-toast>
-              </td>
-
-
+            <td class="col-acoes">
+              <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"></a>&nbsp;
+              <button icon="fa fa-trash" pButton pTooltip="Excluir" tooltipPosition="top"
+                      (click)="excluir(lancamento)"></button>
+            </td>
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
@@ -90,3 +85,4 @@
     <a label="Novo Lançamento" pButton></a>
   </div>
 </div>
+<p-toast></p-toast>
