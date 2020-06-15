@@ -50,4 +50,12 @@ export class PessoaService {
       .toPromise()
       .then(() => null);
   }
+
+  listarTodos() {
+    return this.http.get(`${this.pessoasUrl}?`)
+      .toPromise()
+      .then(response => {
+        return response['content'];
+      });
+  }
 }
