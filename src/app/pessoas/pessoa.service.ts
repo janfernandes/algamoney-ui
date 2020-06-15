@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 export class PessoaFiltro {
   nome: string;
@@ -39,6 +39,14 @@ export class PessoaService {
 
   excluir(codigo: number): Promise<void> {
     return this.http.delete(`${this.pessoasUrl}/${codigo}`)
+      .toPromise()
+      .then(() => null);
+  }
+
+  editar(codigo: number, ativo: boolean): Promise<void> {
+    const header = new HttpHeaders();
+    header.append('Content-Type', 'application/json');
+    return this.http.put(`${this.pessoasUrl}/${codigo}/ativo`, ativo, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
       .toPromise()
       .then(() => null);
   }

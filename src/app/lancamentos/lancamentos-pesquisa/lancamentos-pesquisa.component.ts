@@ -57,7 +57,7 @@ export class LancamentosPesquisaComponent implements OnInit {
         this.grid.reset();
         this.messageService.add({
           severity: 'success',
-          summary: 'Success Message',
+          summary: 'Successo',
           detail: 'Lançamento excluído com sucesso.'
         });
       })

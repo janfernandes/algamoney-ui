@@ -38,26 +38,39 @@ export class PessoasPesquisaComponent  implements OnInit{
       .catch(erro => this.errorHandler.handle(erro));
   }
 
-  verificarExclusao(lancamento: any) {
+  verificarExclusao(pessoa: any) {
     this.confirmationService.confirm({
       message: 'Tem certeza que deseja excluir?',
       accept: () => {
-        this.excluir(lancamento);
+        this.excluir(pessoa);
       }
     });
   }
 
-  excluir(lancamento: any) {
-    this.pessoaService.excluir(lancamento.codigo)
+  excluir(pessoa: any) {
+    this.pessoaService.excluir(pessoa.codigo)
       .then(() => {
         this.grid.reset();
         this.messageService.add({
           severity: 'success',
-          summary: 'Success Message',
-          detail: 'Lançamento excluído com sucesso.'
+          summary: 'Sucesso',
+          detail: 'Pessoa excluída com sucesso.'
         });
       })
       .catch(erro => this.errorHandler.handle(erro));
   }
 
+  alterarStatus(pessoa: any) {
+    const novoStatus = !pessoa.ativo;
+    this.pessoaService.editar(pessoa.codigo, novoStatus)
+      .then(() => {
+        this.grid.reset();
+        this.messageService.add({
+          severity: 'success',
+          summary: '',
+          detail: 'Status alterado com sucesso.'
+        });
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
 }
