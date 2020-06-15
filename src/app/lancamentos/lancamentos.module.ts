@@ -14,7 +14,6 @@ import {DropdownModule} from 'primeng/dropdown';
 import {CurrencyMaskModule} from 'ng2-currency-mask';
 import {SharedModule} from '../shared/shared.module';
 import {ToastModule} from 'primeng/toast';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CodeHighlighterModule} from 'primeng/codehighlighter';
 
 
@@ -34,7 +33,6 @@ import {CodeHighlighterModule} from 'primeng/codehighlighter';
     CurrencyMaskModule,
     SharedModule,
     ToastModule,
-    BrowserAnimationsModule,
     CodeHighlighterModule
   ],
   declarations: [
