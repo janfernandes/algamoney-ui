@@ -1,13 +1,11 @@
+import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
+import {CoreModule} from './core/core.module';
 import {NgModule} from '@angular/core';
-
-import {AppComponent} from './app.component';
 import {LancamentosModule} from './lancamentos/lancamentos.module';
 import {PessoasModule} from './pessoas/pessoas.module';
-import {CoreModule} from './core/core.module';
-import {HttpClientModule} from '@angular/common/http';
-import {LancamentoService} from './lancamentos/lancamento.service';
-
+import {AppComponent} from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,12 +13,13 @@ import {LancamentoService} from './lancamentos/lancamento.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     LancamentosModule,
     PessoasModule,
     CoreModule,
     HttpClientModule
   ],
-  providers: [LancamentoService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

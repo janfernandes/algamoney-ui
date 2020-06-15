@@ -25,7 +25,7 @@ export class PessoaService {
       params = params.set('nome', filtro.nome);
     }
 
-    return this.http.get(`${this.pessoasUrl}`, {params})
+    return this.http.get(`${this.pessoasUrl}?`, {params})
       .toPromise()
       .then(response => {
         const pessoas = response['content'];
@@ -35,5 +35,11 @@ export class PessoaService {
         };
         return resultado;
       });
+  }
+
+  excluir(codigo: number): Promise<void> {
+    return this.http.delete(`${this.pessoasUrl}/${codigo}`)
+      .toPromise()
+      .then(() => null);
   }
 }
