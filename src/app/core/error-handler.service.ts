@@ -10,10 +10,13 @@ export class ErrorHandlerService {
 
   handle(errorResponse: any) {
     let msg: string;
-
     if (typeof errorResponse === 'string'){
       msg = errorResponse;
-    } else {
+    }
+    else if (typeof errorResponse === 'object' && errorResponse.status >= 400 && errorResponse.status <= 499){
+      msg = errorResponse.error[0].mensagemUsuario;
+    }
+    else {
       msg = 'Erro ao processar serviço remoto. Tente novamente.';
     }
 
