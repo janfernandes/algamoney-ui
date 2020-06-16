@@ -21,7 +21,6 @@ import {CodeHighlighterModule} from 'primeng/codehighlighter';
   imports: [
     CommonModule,
     FormsModule,
-
     InputTextModule,
     ButtonModule,
     TableModule,

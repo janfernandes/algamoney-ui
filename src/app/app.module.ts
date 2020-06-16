@@ -5,7 +5,7 @@ import {NgModule} from '@angular/core';
 import {LancamentosModule} from './lancamentos/lancamentos.module';
 import {PessoasModule} from './pessoas/pessoas.module';
 import {AppComponent} from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
 import {LancamentosPesquisaComponent} from './lancamentos/lancamentos-pesquisa/lancamentos-pesquisa.component';
 import {LancamentoCadastroComponent} from './lancamentos/lancamento-cadastro/lancamento-cadastro.component';
