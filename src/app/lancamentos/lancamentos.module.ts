@@ -15,7 +15,7 @@ import {CurrencyMaskModule} from 'ng2-currency-mask';
 import {SharedModule} from '../shared/shared.module';
 import {ToastModule} from 'primeng/toast';
 import {CodeHighlighterModule} from 'primeng/codehighlighter';
-import {RouterModule} from '@angular/router';
+import {LancamentosRoutingModule} from './lancamentos-routing.module';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import {RouterModule} from '@angular/router';
     SharedModule,
     ToastModule,
     CodeHighlighterModule,
-    RouterModule
+    LancamentosRoutingModule
   ],
   declarations: [
     LancamentoCadastroComponent,
