@@ -64,7 +64,8 @@
             </td>
             <!--            <button pButton label="Teste"></button>-->
             <td class="col-acoes">
-              <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"></a>&nbsp;
+              <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"
+              [routerLink]="['/lancamentos', lancamento.codigo]"></a>&nbsp;
               <button icon="fa fa-trash" pButton pTooltip="Excluir" tooltipPosition="top"
                       (click)="verificarExclusao(lancamento)"></button>
             </td>
