@@ -13,6 +13,7 @@ import {ErrorHandlerService} from './error-handler.service';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 import {NavbarComponent} from './navbar/navbar.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [NavbarComponent],
@@ -23,7 +24,8 @@ import {NavbarComponent} from './navbar/navbar.component';
   ],
   imports: [
     CommonModule,
-    ToastModule
+    ToastModule,
+    RouterModule
   ],
   providers: [
     ErrorHandlerService,
