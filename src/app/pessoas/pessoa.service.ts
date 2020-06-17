@@ -45,15 +45,13 @@ export class PessoaService {
   }
 
   editar(codigo: number, ativo: boolean): Promise<void> {
-    const header = new HttpHeaders();
-    header.append('Content-Type', 'application/json');
     return this.http.put(`${this.pessoasUrl}/${codigo}/ativo`, ativo, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
       .toPromise()
       .then(() => null);
   }
 
   listarTodos() {
-    return this.http.get(`${this.pessoasUrl}?`)
+    return this.http.get(`${this.pessoasUrl}`)
       .toPromise()
       .then(response => {
         return response['content'];
