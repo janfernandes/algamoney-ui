@@ -70,7 +70,7 @@ export class LancamentoService {
     return this.http.put(`${this.lancamentosUrl}/${lancamento.codigo}`, lancamento, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
       .toPromise()
       .then(response => {
-        const lancamentoAlterado = response['content'] as Lancamento;
+        const lancamentoAlterado = response as Lancamento;
 
         this.converterStringsParaDatas([lancamentoAlterado]);
 
