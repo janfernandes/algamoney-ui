@@ -82,7 +82,7 @@ export class LancamentoService {
     return this.http.get(`${this.lancamentosUrl}/${codigo}`)
       .toPromise()
       .then(response => {
-        const lancamento = response['content'] as Lancamento;
+        const lancamento = response as Lancamento;
 
         this.converterStringsParaDatas([lancamento]);
 
