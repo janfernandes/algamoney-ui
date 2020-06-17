@@ -15,6 +15,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {NavbarComponent} from './navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import {Title} from "@angular/platform-browser";
 
 @NgModule({
   declarations: [NavbarComponent, PaginaNaoEncontradaComponent],
@@ -34,6 +35,7 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
     LancamentoService,
     PessoaService,
     MessageService,
+    Title,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
   ]
 })
