@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Lancamento, Pessoa} from '../core/model';
+import {Pessoa} from '../core/model';
 
 export class PessoaFiltro {
   nome: string;
@@ -62,5 +62,21 @@ export class PessoaService {
     return this.http.post<Pessoa>(
       this.pessoasUrl, pessoa, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
       .toPromise();
+  }
+
+  atualizar(pessoa: Pessoa) {
+    return this.http.put(`${this.pessoasUrl}/${pessoa.codigo}`, pessoa, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
+      .toPromise()
+      .then(response => {
+        return response as Pessoa;
+      });
+  }
+
+  buscarPorCodigo(codigo: number) {
+    return this.http.get(`${this.pessoasUrl}/${codigo}`)
+      .toPromise()
+      .then(response => {
+        return response as Pessoa;
+      });
   }
 }

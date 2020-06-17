@@ -39,7 +39,10 @@
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>CEP</label>
-        <p-inputMask mask="99.999-999" name="cep" [(ngModel)]="pessoa.endereco.cep" #cep="ngModel" valid required="true"></p-inputMask>
+        <p-inputMask mask="99.999-999" name="cep"
+                     [(ngModel)]="pessoa.endereco.cep"
+                     #cep="ngModel" valid required="true"></p-inputMask>
+
         <app-message [control]="cep" error="required" text="Informe o CEP"></app-message>
       </div>
 
@@ -59,7 +62,7 @@
       <div class="ui-g-12">
         <button pButton type="submit" label="Salvar"  [disabled]="pessoaCadastroForm.invalid"></button>&nbsp;
         <button pButton type="button" label="Novo" class="ui-button-secondary"></button>&nbsp;
-        <a href="javascript:;">Voltar para a pesquisa</a>
+        <a routerLink="/pessoas">Voltar para a pesquisa</a>
       </div>
     </div>
   </form>

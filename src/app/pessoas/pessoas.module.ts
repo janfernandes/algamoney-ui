@@ -9,6 +9,8 @@ import {TooltipModule} from 'primeng/tooltip';
 import {FormsModule} from '@angular/forms';
 import {InputMaskModule} from 'primeng/inputmask';
 import {SharedModule} from '../shared/shared.module';
+import {PessoasRoutingModule} from './pessoas-routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import {SharedModule} from '../shared/shared.module';
     TableModule,
     TooltipModule,
     InputMaskModule,
-    SharedModule
+    SharedModule,
+    PessoasRoutingModule,
+    RouterModule
   ],
   declarations: [
     PessoaCadastroComponent,

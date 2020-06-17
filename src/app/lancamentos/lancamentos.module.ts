@@ -16,6 +16,7 @@ import {SharedModule} from '../shared/shared.module';
 import {ToastModule} from 'primeng/toast';
 import {CodeHighlighterModule} from 'primeng/codehighlighter';
 import {LancamentosRoutingModule} from './lancamentos-routing.module';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {LancamentosRoutingModule} from './lancamentos-routing.module';
     SharedModule,
     ToastModule,
     CodeHighlighterModule,
-    LancamentosRoutingModule
+    LancamentosRoutingModule,
+    RouterModule
   ],
   declarations: [
     LancamentoCadastroComponent,

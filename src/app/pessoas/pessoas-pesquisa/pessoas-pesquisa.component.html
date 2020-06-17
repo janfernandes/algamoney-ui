@@ -52,7 +52,8 @@
             </td>
             <!--            <button pButton label="Teste"></button>-->
             <td class="col-acoes">
-              <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"></a>&nbsp;
+              <a icon="fa fa-pencil" pButton pTooltip="Editar" tooltipPosition="top"
+                 [routerLink]="['/pessoas', pessoa.codigo]"></a>&nbsp;
               <button icon="fa fa-trash" pButton pTooltip="Excluir" tooltipPosition="top"
                       (click)="verificarExclusao(pessoa)"></button>
             </td>
@@ -70,7 +71,7 @@
     </div>
 
     <div class="ui-g-12">
-      <a label="Nova Pessoa" pButton></a>
+      <a label="Nova Pessoa" pButton routerLink="/pessoas/novo"></a>
     </div>
   </div>
 
