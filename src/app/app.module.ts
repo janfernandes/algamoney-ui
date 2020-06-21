@@ -7,6 +7,7 @@ import {PessoasModule} from './pessoas/pessoas.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
+import {SegurancaModule} from "./seguranca/seguranca.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserAnimationsModule,
     LancamentosModule,
     PessoasModule,
+    SegurancaModule,
     CoreModule,
     HttpClientModule,
     AppRoutingModule

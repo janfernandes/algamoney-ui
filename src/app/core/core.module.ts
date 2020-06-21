@@ -15,7 +15,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {NavbarComponent} from './navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
-import {Title} from "@angular/platform-browser";
+import {Title} from '@angular/platform-browser';
+import {AuthService} from '../seguranca/auth.service';
 
 @NgModule({
   declarations: [NavbarComponent, PaginaNaoEncontradaComponent],
@@ -30,6 +31,7 @@ import {Title} from "@angular/platform-browser";
     RouterModule
   ],
   providers: [
+    AuthService,
     ErrorHandlerService,
     ConfirmationService,
     LancamentoService,
