@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import * as moment from 'moment';
 import {Lancamento} from '../core/model';
+import {environment} from '../../environments/environment';
 
 export class LancamentoFiltro {
   descricao: string;
@@ -15,9 +16,10 @@ export class LancamentoFiltro {
   providedIn: 'root'
 })
 export class LancamentoService {
-  lancamentosUrl = 'http://localhost:24240/lancamentos';
+  lancamentosUrl: string;
 
   constructor(private http: HttpClient) {
+    this.lancamentosUrl = `${environment.apiUrl}/lancamentos`;
   }
 
   pesquisar(filtro: LancamentoFiltro): Promise<any> {
