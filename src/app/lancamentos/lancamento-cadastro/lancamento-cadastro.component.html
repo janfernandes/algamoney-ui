@@ -33,8 +33,8 @@
         <label>Descrição</label>
 <!--        {{descricao.errors |json}}-->
         <input pInputText type="text" name="descricao" formControlName="descricao">
-        <app-message [control]="formulario.get('descricao')" error="required" text="Informe uma descrição"></app-message>
-        <app-message [control]="formulario.get('descricao')" error="minlength" text="Mínimo de 5 caracteres"></app-message>
+        <app-message [control]="formulario.get('descricao')" error="obrigatoriedade" text="Informe uma descrição (obrigatória)"></app-message>
+        <app-message [control]="formulario.get('descricao')" error="tamanhoMinimo" text="Mínimo de {{ formulario.get('descricao').errors?.tamanho }} caracteres"></app-message>
 
         <!--        <div>-->
 <!--&lt;!&ndash;          descricao.errors.minlength.requiredLength&ndash;&gt;-->

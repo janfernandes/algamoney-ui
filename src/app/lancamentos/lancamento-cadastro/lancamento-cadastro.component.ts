@@ -3,7 +3,7 @@ import {CategoriaService} from '../../categorias/categoria.service';
 import {ErrorHandlerService} from '../../core/error-handler.service';
 import {PessoaService} from '../../pessoas/pessoa.service';
 import {Lancamento} from '../../core/model';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {LancamentoService} from '../lancamento.service';
 import {MessageService} from 'primeng/api';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -58,7 +58,7 @@ export class LancamentoCadastroComponent implements OnInit {
       tipo: ['RECEITA', Validators.required],
       dataVencimento: [null, Validators.required],
       dataPagamento: null,
-      descricao: [null, [Validators.required, Validators.minLength(5)]],
+      descricao: [null, [this.validarObrigatoriedade, this.validarTamanhoMinimo(5)]],
       valor: [null, Validators.required],
       pessoa: this.formBuilder.group({
         codigo: [null, Validators.required],
@@ -70,6 +70,17 @@ export class LancamentoCadastroComponent implements OnInit {
       }),
       observacao: []
     });
+  }
+
+  validarObrigatoriedade(input: FormControl){
+    return (input.value ? null : {obrigatoriedade: true});
+  }
+
+  validarTamanhoMinimo(valor: number){
+    //se precisar pegar um valor especifico: input.root.get('dataVencimento').value
+    return (input: FormControl) => {
+      return (!input.value || input.value.length >= valor) ? null : {tamanhoMinimo: {tamanho: valor}}
+    };
   }
 
   get editando() {
