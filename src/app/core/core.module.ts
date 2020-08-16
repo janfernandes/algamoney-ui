@@ -17,6 +17,7 @@ import {RouterModule} from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import {Title} from '@angular/platform-browser';
 import {AuthService} from '../seguranca/auth.service';
+import {DashboardService} from '../dashboard/dashboard.service';
 
 @NgModule({
   declarations: [NavbarComponent, PaginaNaoEncontradaComponent],
@@ -36,6 +37,7 @@ import {AuthService} from '../seguranca/auth.service';
     ConfirmationService,
     LancamentoService,
     PessoaService,
+    DashboardService,
     MessageService,
     Title,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
