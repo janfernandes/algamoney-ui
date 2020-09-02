@@ -11,6 +11,8 @@ import {InputMaskModule} from 'primeng/inputmask';
 import {SharedModule} from '../shared/shared.module';
 import {PessoasRoutingModule} from './pessoas-routing.module';
 import {RouterModule} from '@angular/router';
+import {PanelModule} from 'primeng/panel';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   imports: [
@@ -23,7 +25,9 @@ import {RouterModule} from '@angular/router';
     InputMaskModule,
     SharedModule,
     PessoasRoutingModule,
-    RouterModule
+    RouterModule,
+    PanelModule,
+    DialogModule
   ],
   declarations: [
     PessoaCadastroComponent,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DashboardService} from '../dashboard.service';
-import {DecimalPipe} from "@angular/common";
+import {DecimalPipe} from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
         }
       }
     }
-  }
+  };
 
   constructor(
     private dashboardService: DashboardService,

@@ -4,11 +4,14 @@ import {PaginaNaoEncontradaComponent} from './core/pagina-nao-encontrada.compone
 import {PessoasModule} from './pessoas/pessoas.module';
 import {LancamentosModule} from './lancamentos/lancamentos.module';
 import {DashboardModule} from './dashboard/dashboard.module';
+import {RelatoriosModule} from './relatorios/relatorios.module';
 
 const routes: Routes = [
   { path: 'lancamentos', loadChildren: () => LancamentosModule },
   { path: 'pessoas', loadChildren: () => PessoasModule },
   { path: 'dashboard', loadChildren: () => DashboardModule },
+  { path: 'relatorios', loadChildren: () => RelatoriosModule },
+  // { path: 'relatorios', loadChildren: 'app/relatorios/relatorios.module#RelatoriosModule'},
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full'  },
   { path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent},

@@ -18,6 +18,7 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
 import {Title} from '@angular/platform-browser';
 import {AuthService} from '../seguranca/auth.service';
 import {DashboardService} from '../dashboard/dashboard.service';
+import {RelatoriosService} from '../relatorios/relatorios.service';
 
 @NgModule({
   declarations: [NavbarComponent, PaginaNaoEncontradaComponent],
@@ -36,6 +37,7 @@ import {DashboardService} from '../dashboard/dashboard.service';
     ErrorHandlerService,
     ConfirmationService,
     LancamentoService,
+    RelatoriosService,
     PessoaService,
     DashboardService,
     MessageService,

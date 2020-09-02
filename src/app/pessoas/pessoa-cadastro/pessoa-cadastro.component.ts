@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Pessoa} from '../../core/model';
+import {Contato, Pessoa} from '../../core/model';
 import {NgForm} from '@angular/forms';
 import {PessoaService} from '../pessoa.service';
 import {MessageService} from 'primeng/api';
@@ -15,6 +15,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class PessoaCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
+  exibindoFormularioContato = false;
+  contato: Contato;
 
   constructor(private pessoaService: PessoaService,
               private messageService: MessageService,
@@ -78,6 +80,11 @@ export class PessoaCadastroComponent implements OnInit {
         this.pessoa = pessoa;
         this.atualizarTituloEdicao();
       }).catch(erro => this.errorHandler.handle(erro));
+  }
+
+  prepararNovoContato() {
+    this.exibindoFormularioContato = true;
+    this.contato = new Contato();
   }
 }
 
